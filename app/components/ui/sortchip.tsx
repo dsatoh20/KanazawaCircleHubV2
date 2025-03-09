@@ -5,7 +5,7 @@ import {
 
 const tags = ['公認', '文化系', '体育会系', '音楽', '兼サー可', '中途歓迎', 'インカレ', 'ボランティア', '初心者歓迎'];
 
-export function SortChip({selectedItems, setSelectedItems}) {
+export function SortChip({selectedItems, setSelectedItems}: {selectedItems: string[], setSelectedItems: (items: string[]) => void}) {
   return (
     <ToggleGroup type="multiple" variant="outline" className="" value={selectedItems} onValueChange={setSelectedItems}>
         {tags.map((tag) => (

@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Noto_Sans_JP } from "next/font/google";
+import { Geist_Mono, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/layout/navbar";
 import Footer from "./components/layout/footer";
@@ -9,10 +9,7 @@ const noto_sans_jp = Noto_Sans_JP({
   variable: "--font-noto-sans-jp"
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
