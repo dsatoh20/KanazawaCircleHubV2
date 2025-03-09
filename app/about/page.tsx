@@ -13,7 +13,7 @@ export default function Page() {
             <p className="w-full text-lg text-muted-foreground pt-8 text-center">沿革</p>
             <p className="w-full text-sm pl-8 pr-8 pt-4 text-left">2025年2月</p>
             <p className="w-full text-sm text-muted-foreground pl-8 pr-8 text-left">金沢大学の学生2名で結成。</p>
-            <div className="flex flex-row justify-center pt-16 gap-4">
+            <div className="flex flex-row pt-16 gap-4 mr-auto ml-auto">
                 <a href="https://www.instagram.com/kanazawa.circlehub/" target="_blank" rel="noopener noreferrer"><Image alt="Instagram" src={"/instagram.svg"} width={32} height={32} /></a>
                 <a href="https://x.com/gocirclehub" target="_blank" rel="noopener noreferrer"><Image alt="X" src={"/x.svg"} width={32} height={32} /></a>
             </div>
