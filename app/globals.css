@@ -126,3 +126,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Noto Sans JP',"Roboto", Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+
+html, main {
+  height: 100%;
+}
+
+footer {
+  top: 100vh;
+}

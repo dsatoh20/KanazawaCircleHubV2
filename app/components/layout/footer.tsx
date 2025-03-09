@@ -5,7 +5,7 @@ import { ExternalLink, ChevronUpCircle } from '@geist-ui/icons'
 
 export default function Footer() {
     return (
-        <footer className="stick w-full h-24 bg-gray-50 justify-center items-center p-5 hover:underline hover:underline-offset-4">
+        <footer className="sticky w-full h-24 bg-gray-50 justify-center items-center p-5 hover:underline hover:underline-offset-4 top-[100vh]">
             <div className="flex items-center h-5 space-x-4 justify-center">
             <Link 
                 color='primary.light'

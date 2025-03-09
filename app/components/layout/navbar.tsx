@@ -18,17 +18,26 @@ export default function Navbar() {
         <MenubarMenu>
             <MenubarTrigger><Menu className="ms-1"/></MenubarTrigger>
             <MenubarContent>
+            <Link href={"/"}>
             <MenubarItem>
                 サークル一覧 <MenubarShortcut><Home /></MenubarShortcut>
-            </MenubarItem>
+            </MenubarItem></Link>
             <MenubarSeparator />
-            <MenubarItem>金沢サークルハブとは</MenubarItem>
+            <Link href={"/about"}><MenubarItem>金沢サークルハブとは</MenubarItem></Link>
             <MenubarSeparator />
-            <MenubarItem>新歓カレンダー</MenubarItem>
+            <Link href={"/calendar"}><MenubarItem>新歓カレンダー</MenubarItem></Link>
             <MenubarSeparator />
-            <MenubarItem>サークル運営者向け</MenubarItem>
+            
+            <Link href={"/manager"}><MenubarItem>サークル運営者向け</MenubarItem></Link>
             <MenubarSeparator />
-            <MenubarItem>お問い合わせ <MenubarShortcut><ExternalLink /></MenubarShortcut></MenubarItem>
+            <Link 
+                href="https://docs.google.com/forms/u/1/d/1XgikhuDE0JQoBhm0a7QN3_60IQzY9ZHGJ0H_3LxaLqQ/" 
+                target='_blank' 
+                rel='noopener noreferrer'
+                >
+            <MenubarItem>
+                お問い合わせ <MenubarShortcut><ExternalLink /></MenubarShortcut>
+            </MenubarItem></Link>
             </MenubarContent>
             
         </MenubarMenu>

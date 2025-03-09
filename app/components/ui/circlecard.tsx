@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 
 import {
     Card,
@@ -8,6 +7,7 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
+import CircleDrawer from "./circledrawer";
 
 interface CircleCardProps {
     item: Circle;
@@ -27,7 +27,7 @@ export default function CircleCard({item}: CircleCardProps) {
             <CardDescription className="h-[40px] overflow-hidden text-ellipsis">{item.activityDetails.summary}</CardDescription>
         </CardHeader>
         <CardFooter className="justify-end pr-4 py-2">
-            <Button size={"sm"}>詳しくみる</Button>
+            <CircleDrawer item={item} />
 
         </CardFooter>
         </div>

@@ -27,7 +27,7 @@ export default function Home() {
     return array;
   };
   return (
-    <div className="grid grid-rows-[0px_1fr_20px] justify-items-center min-h-screen pl-4 pr-4 pb-4 gap-4 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[0px_1fr_20px] justify-items-center pl-4 pr-4 pb-4 gap-4 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[16px] row-start-2 items-center sm:items-start">
         <Searchbox items={items} />
         <SortChip selectedItems={selectedItems} setSelectedItems={setSelectedItems}/>
