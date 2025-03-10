@@ -2,7 +2,7 @@
 
 import { Input } from "@/components/ui/input";
 import { Search } from '@geist-ui/icons'
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CircleCard from "./circlecard";
 
 export default function Searchbox({items}: {items: Circle[]}) {
@@ -10,6 +10,8 @@ export default function Searchbox({items}: {items: Circle[]}) {
     const [open, setOpen] = useState(false);
     const [filteredItems, setFilteredItems] = useState<Circle[]>(items);
     const [selectedItem, setSelectedItem] = useState<Circle | null>(null);
+    const searchBoxRef = useRef<HTMLDivElement | null>(null);
+
     function handleClick(value: string) {
         setSelectedItem(getCircle(value));
         setOpen(false);
@@ -23,8 +25,17 @@ export default function Searchbox({items}: {items: Circle[]}) {
     }, [inputValue, items]
     );
 
+    useEffect(() => {
+        function handleClickOutside(event:MouseEvent) {
+            if (searchBoxRef.current && !searchBoxRef.current.contains(event.target as Node)) {
+                setOpen(false);
+            }
+        }
+        document.addEventListener("click", handleClickOutside);
+    }, []);
+
     return (
-    <div className="w-full" onBlur={() => setOpen(false)}>
+    <div className="w-full" ref={searchBoxRef}>
         <div className="flex w-full max-w-sm items-center border border-gray-300 rounded-lg px-2.5 py-1.5">
           <Search className="mr-1" />
           <Input type="search" placeholder="サークルをさがす" className="w-full border-0" onChange={(e) => setInputValue(e.target.value)} onFocus={() => setOpen(true)}/>
@@ -33,7 +44,7 @@ export default function Searchbox({items}: {items: Circle[]}) {
         <ul className="w-full ml-4 mt-2">
             {filteredItems.length === 0 && <li className="mt-1 text-left"><span>検索結果がありません</span></li>}
             {filteredItems.map((item, index) => (
-                <li className="mt-1 text-left" key={index} onClick={() => handleClick(item.circleName)}>{item.circleName}</li>
+                <li className="mt-1 w-full" key={index}><button className="w-full text-left" onClick={(() => handleClick(item.circleName))}>{item.circleName}</button></li>
             ))}
         </ul>
         } 
