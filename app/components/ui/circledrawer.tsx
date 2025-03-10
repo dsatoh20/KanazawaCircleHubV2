@@ -28,20 +28,22 @@ export default function CircleDrawer({item}: CircleCardProps) {
             <img src={item.profileImage} alt={item.circleName} className="object-cover w-full h-[160px] mb-1"/>
             <h2 className="mt-1 mb-1">活動概要</h2>
             <DrawerDescription>{item.activityDetails.summary}</DrawerDescription>
-                <div className="flex flex-col gap-4">
-                    <div className="flex flex-col gap-2">
-                        <h2 className="pt-1">外部リンク</h2>
-                        <div className="flex flex-row gap-2">
-                            {item.externalLinks.Facebook && <a href={item.externalLinks.Facebook} target='_blank' rel='noopener noreferrer'><Image src="/facebook.svg" alt="facebook" width={24} height={24} /></a> }
-                            {item.externalLinks.X && <a href={item.externalLinks.X} target='_blank' rel='noopener noreferrer'><Image src="/x.svg" alt="x" width={32} height={32} /></a>}
-                            {item.externalLinks.Instagram && <a href={item.externalLinks.Instagram} target='_blank' rel='noopener noreferrer'><Image src="/instagram.svg" alt="instagram" width={32} height={32} /></a>}
-                            {item.externalLinks.LINE && <a href={item.externalLinks.LINE} target='_blank' rel='noopener noreferrer'><Image src="/line.svg" alt="line" width={32} height={32} /></a>}
-                            {item.externalLinks.Website && <a href={item.externalLinks.Website} target='_blank' rel='noopener noreferrer'><Image src="/website.svg" alt="website" width={32} height={32} /></a>}
+                <div className="flex flex-col gap-4  whitespace-pre-wrap">
+                    <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-2">
+                            <h2 className="mt-4">外部リンク</h2>
+                            <div className="flex flex-row gap-2">
+                                {item.externalLinks.Facebook && <a href={item.externalLinks.Facebook} target='_blank' rel='noopener noreferrer'><Image src="/facebook.svg" alt="facebook" width={24} height={24} /></a> }
+                                {item.externalLinks.X && <a href={item.externalLinks.X} target='_blank' rel='noopener noreferrer'><Image src="/x.svg" alt="x" width={32} height={32} /></a>}
+                                {item.externalLinks.Instagram && <a href={item.externalLinks.Instagram} target='_blank' rel='noopener noreferrer'><Image src="/instagram.svg" alt="instagram" width={32} height={32} /></a>}
+                                {item.externalLinks.LINE && <a href={item.externalLinks.LINE} target='_blank' rel='noopener noreferrer'><Image src="/line.svg" alt="line" width={32} height={32} /></a>}
+                                {item.externalLinks.Website && <a href={item.externalLinks.Website} target='_blank' rel='noopener noreferrer'><Image src="/website.svg" alt="website" width={32} height={32} /></a>}
+                            </div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-col gap-4">
                         <h2>活動詳細</h2>
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-2">
                             <p className="text-sm">活動実績</p>
                             <p className="text-sm text-muted-foreground">{item.activityDetails.record}</p>
                             <p className="text-sm">活動場所</p>
@@ -56,9 +58,9 @@ export default function CircleDrawer({item}: CircleCardProps) {
                             <p className="text-sm text-muted-foreground">{item.activityDetails.initialCost}</p>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-col gap-4">
                         <h2>基本情報</h2>
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-2">
                             <p className="text-sm">結成念</p>
                             <p className="text-sm text-muted-foreground">{item.memberComposition.foundingYear}年</p>
                             <p className="text-sm">部員数</p>
@@ -71,18 +73,18 @@ export default function CircleDrawer({item}: CircleCardProps) {
                             <p className="text-sm text-muted-foreground"></p>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-col gap-4">
                         <h2>内部の声</h2>
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-2">
                             <p className="text-sm">◎魅力</p>
                             <p className="text-sm text-muted-foreground">{item.activityDetails.feelingPositive}</p>
                             <p className="text-sm">△ここはちょっと...</p>
                             <p className="text-sm text-muted-foreground">{item.activityDetails.feelingNegative}</p>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-col gap-4">
                         <h2>新歓スケジュール</h2>
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-2">
                             <p className="text-sm text-muted-foreground">{item.recruitmentInfo.welcomeSchedule}</p>
                         </div>
                     </div>
