@@ -24,9 +24,9 @@ export default function CircleCard({item}: CircleCardProps) {
         <div className="flex flex-col h-full w-full">
         <CardHeader>
             <CardTitle className="">{item.circleName}</CardTitle>
-            <CardDescription className="h-[40px] overflow-hidden text-ellipsis">{item.activityDetails.summary}</CardDescription>
+            <CardDescription className="h-[60px] overflow-hidden text-ellipsis">{item.activityDetails.summary}</CardDescription>
         </CardHeader>
-        <CardFooter className="justify-end pr-4 py-2">
+        <CardFooter className="justify-end pr-4 pt-0">
             <CircleDrawer item={item} />
 
         </CardFooter>

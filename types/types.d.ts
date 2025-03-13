@@ -1,6 +1,7 @@
 // types.d.ts
 interface Circle {
     circleName: string;
+    slug: string;
     profileImage: string;
     affiliation: string;
     memberComposition: {
