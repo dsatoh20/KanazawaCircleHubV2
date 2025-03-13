@@ -1,5 +1,11 @@
 import { Send, ExternalLink } from '@geist-ui/icons'
 import Image from 'next/image'
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "団体運営者向け | 金沢サークルハブ | 金沢大学のサークル・学生団体紹介",
+    description: "金沢・北陸の学生向け、サークル情報まとめサイトです。各団体の活動内容から新歓スケジュールまで掲載しています。",        
+}
 
 export default function Page() {
     return (

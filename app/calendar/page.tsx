@@ -1,3 +1,10 @@
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "新歓カレンダー | 金沢サークルハブ | 金沢大学のサークル・学生団体紹介",
+    description: "金沢・北陸の学生向け、サークル情報まとめサイトです。各団体の活動内容から新歓スケジュールまで掲載しています。",        
+}
+
 export default function Page() {
     return (
         <div className="grid grid-rows-[0px_1fr_20px] justify-items-center pl-4 pr-4 pb-4 gap-4 sm:p-20 font-[family-name:var(--font-geist-sans)]">

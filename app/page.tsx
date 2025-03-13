@@ -2,7 +2,7 @@
 
 import Searchbox from "./components/ui/searchbox";
 import { SortChip } from "./components/ui/sortchip";
-import data from "../public/data.json";
+import data from "../data.json";
 import CircleCard from "./components/ui/circlecard";
 import { useState } from "react";
 
