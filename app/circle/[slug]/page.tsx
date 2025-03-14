@@ -1,8 +1,14 @@
-//import { Metadata } from "next";
+import { Metadata } from "next";
 import data from "../../../data.json";
 import { notFound } from 'next/navigation';
 import Image from "next/image";
-export async function generateMetadata({ params }: { params: { slug: string }}): Promise<Metadata> {
+
+type Props = {
+    params: Promise<{slug: string}>
+    searchParams: Promise<{[key: string]: string|string[]|undefined}>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const items: Circle[] = data;
     const {slug} = await params;
     const item = items.find((item) => item.slug === slug);
@@ -17,7 +23,7 @@ export async function generateMetadata({ params }: { params: { slug: string }}):
 }
 
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({ params }: Props) {
     const items:Circle[] = data;
     const { slug } = await params;
     const item = items.find((item) => item.slug === slug);
@@ -30,7 +36,7 @@ return (
         <p>{item.circleName}</p>
         <img src={item.profileImage} alt={item.circleName} className="w-full"/>
         <p className="text-sm">{item.activityDetails.summary}</p>
-                <div className="flex flex-col gap-4  whitespace-pre-wrap">
+                <div className="flex flex-col gap-4 whitespace-pre-wrap w-full">
                     <div className="flex flex-col gap-4">
                         <div className="flex flex-col gap-2">
                             <h2 className="mt-4">外部リンク</h2>
